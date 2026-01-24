@@ -7,7 +7,7 @@ conf = SparkConf().setMaster("local").setAppName("SparkTFIDF")
 sc = SparkContext(conf = conf)
 
 # Load documents (one per line).
-rawData = sc.textFile(r"C:\Users\Lenovo\OneDrive\Desktop\Self\Udemy_genAI_ML_python\subset-small.tsv")
+rawData = sc.textFile("subset-small.tsv")
 fields = rawData.map(lambda x: x.split("\t"))
 documents = fields.map(lambda x: x[3].split(" "))
 
